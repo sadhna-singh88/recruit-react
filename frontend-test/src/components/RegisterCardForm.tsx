@@ -73,7 +73,7 @@ const RegisterCardForm: React.FC= () => {
         onChange={handleChange} required/>
         
        
-        <input type="text" id="expiryDate" name="expiryDate" placeholder="Expiry Date" value={formValues.expiryDate} 
+        <input type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date" value={formValues.expiryDate} 
         onChange={handleChange} required/>
         </div>
         <button type="submit">Submit</button>
