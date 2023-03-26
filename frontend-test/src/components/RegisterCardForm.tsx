@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 //Define interface for all form values 
 interface FormValues {
   creditCard:number;
-  cvv:number;
+  cvc:number;
   expiryDate:string;
 }
 
@@ -14,7 +14,7 @@ const RegisterCardForm: React.FC= () => {
 
   const [formValues, setFormValues] = useState<FormValues>({
     creditCard:0,
-    cvv:0,
+    cvc:0,
     expiryDate:''
   })
 
@@ -35,7 +35,7 @@ const RegisterCardForm: React.FC= () => {
 
 //Creating a input validation funtion for form 
   const validateInput = () => {
-    const {creditCard, cvv, expiryDate} = formValues
+    const {creditCard, cvc, expiryDate} = formValues
     let isValid = true;
     // credit card validation
     if (isNaN (creditCard)) {
@@ -43,9 +43,9 @@ const RegisterCardForm: React.FC= () => {
       console.log('Credit card number is not a number')
     }
     // cvv validation
-    if (isNaN (cvv)) {
+    if (isNaN (cvc)) {
       isValid = false;
-      console.log('CVV is not a number')
+      console.log('CVC is not a number')
     }
     // expiry date validation
     if (isNaN (Date.parse(expiryDate))) {
@@ -67,8 +67,8 @@ const RegisterCardForm: React.FC= () => {
           onChange={handleChange} required/>
         </div>
         <div>
-        <label htmlFor="cvv">CVV</label>
-        <input type="number" id="cvv" name="cvv" placeholder="CVV" value={formValues.cvv} 
+        <label htmlFor="cvc">CVC</label>
+        <input type="number" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
         onChange={handleChange} required/>
         </div>
         <div>
