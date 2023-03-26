@@ -19,11 +19,16 @@ test('renders the App page', () => {
 
 test('renders the RegisterCardForm page', () => {
   //test for all input fields
+  
+  const username = 'Sadhna'
   render(
-    <RegisterCardForm/>
+    
+    <RegisterCardForm username={ username}/>
   )
   expect(screen.getByPlaceholderText('Credit Card Number')).toBeInTheDocument()
   expect(screen.getByPlaceholderText('CVC')).toBeInTheDocument()
   expect(screen.getByPlaceholderText('Expiry Date')).toBeInTheDocument()
   expect(screen.getByText('Submit')).toBeInTheDocument()
 })
+
+

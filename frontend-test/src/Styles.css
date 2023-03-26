@@ -36,18 +36,37 @@
   font-weight: bold;
 }
 
-.register-card-form {
+/* .register-card-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 400px;
  
   padding: 20px;
+  border: 1px solid #f0dada;
+  border-radius: 5px;
+  background-color: #f3ecec;
+} */
+
+.register-card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* change width to 100% */
+  max-width: 500px; /* add max-width to limit the form width on larger screens */
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f7f7f7;
 }
 
+/* add media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .register-card-form {
+    max-width: 90%; /* decrease max-width for smaller screens */
+  }
+}
 nav {
   display: flex;
   /* justify-content: space-between; */

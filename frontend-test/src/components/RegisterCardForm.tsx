@@ -8,7 +8,11 @@ interface FormValues {
   expiryDate:string;
 }
 
-const RegisterCardForm: React.FC= () => {
+interface Props {
+  username: string;
+}
+
+const RegisterCardForm: React.FC<Props>= ({username}) => {
 
   //using useState hook to store FormValues
 
@@ -58,8 +62,8 @@ const RegisterCardForm: React.FC= () => {
 
 
   return (
-    
-      <form  className="register-card-form" onSubmit={handleSubmit}>
+    <div className="register-card-form"> <h2>Welcome {username}</h2> 
+      <form   onSubmit={handleSubmit}>
         <div className='form-group'>
         
           <input type="text" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
@@ -78,7 +82,7 @@ const RegisterCardForm: React.FC= () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-    
+    </div>
   )
 
  

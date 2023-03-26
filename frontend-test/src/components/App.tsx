@@ -1,14 +1,18 @@
 import React from 'react';
-
 import '../Styles.css';
 
 import RegisterCardForm from './RegisterCardForm';
 import NavBar from './NavBar';
-function App() {
+
+
+
+const App: React.FC=() => {
+  //Using const username for now but this can come from user's login.Can be done later as improvement
+  const username = 'Sadhna'
   return (
     <div className="App">
       <NavBar/>
-     <RegisterCardForm/>
+     <RegisterCardForm username={ username}/>
      
     </div>
   );
