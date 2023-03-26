@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import '../App.css';
+import '../Styles.css';
 
 import RegisterCardForm from './RegisterCardForm';
 import NavBar from './NavBar';
