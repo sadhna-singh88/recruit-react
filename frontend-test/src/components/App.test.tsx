@@ -28,7 +28,23 @@ test('renders the RegisterCardForm page', () => {
   expect(screen.getByPlaceholderText('Credit Card Number')).toBeInTheDocument()
   expect(screen.getByPlaceholderText('CVC')).toBeInTheDocument()
   expect(screen.getByPlaceholderText('Expiry Date')).toBeInTheDocument()
+  
+})
+
+test('when app component is rendered,app should have submit button', () => {
+  render(
+   
+        <App />
+    
+  )
   expect(screen.getByText('Submit')).toBeInTheDocument()
 })
 
-
+test('when registration component rendered, welcome msg is displayed', () => {
+  render(
+   
+        < RegisterCardForm username={'Sadhna'}/>
+    
+  )
+  expect(screen.getByText('Welcome Sadhna')).toBeInTheDocument()
+})
