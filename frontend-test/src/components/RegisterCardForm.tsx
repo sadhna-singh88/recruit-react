@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment, useState} from 'react';
 
 
 //Define interface for all form values 
@@ -58,31 +58,31 @@ const RegisterCardForm: React.FC<Props>= ({username}) => {
     }
     return isValid;
   }
-    
-
 
   return (
-    <div className="register-card-form"> <h2>Welcome {username}</h2> 
-      <form   onSubmit={handleSubmit}>
-        <div className='form-group'>
-        
-          <input type="text" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
-          value={formValues.creditCard } 
-          onChange={handleChange} required />
-          
+    <Fragment>
+      <main>
+        <div className="register-card-form"> <h1>Welcome {username}</h1> 
+          <form onSubmit={handleSubmit}>
+              <div className='form-group'>
+                <label htmlFor="creditCard">Credit Card Number:</label>
+                <input type="text" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
+                  value={formValues.creditCard } 
+                  onChange={handleChange} required />
+              </div>
+              <div className='form-group'>
+                <label htmlFor="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
+                  onChange={handleChange} required  className="small-input"/>
+                <label htmlFor="expiryDate">Expiry Date:</label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" value={formValues.expiryDate} 
+                  onChange={handleChange} required  className="small-input"/>
+              </div>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <div className='form-group'>
-        
-        <input type="text" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
-        onChange={handleChange} required/>
-        
-       
-        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" value={formValues.expiryDate} 
-        onChange={handleChange} required/>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      </main>
+    </Fragment>
   )
 
  

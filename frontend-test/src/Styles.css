@@ -13,14 +13,12 @@
   overflow-y: auto;
 }
 .menu-icon span {
-
   position: relative;
   margin-left: 1.5rem;
   font-weight: bold;
 }
 .back-button {
   display: flex;
- 
   padding: 20px;
   font-size: 1.2rem;
   color: #000;
@@ -30,46 +28,32 @@
 
 .back-button span {
   display: flex;
-
   position: relative;
   margin-left: 0.5rem;
   font-weight: bold;
 }
-
-/* .register-card-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
- 
-  padding: 20px;
-  border: 1px solid #f0dada;
-  border-radius: 5px;
-  background-color: #f3ecec;
-} */
 
 .register-card-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* change width to 100% */
-  max-width: 500px; /* add max-width to limit the form width on larger screens */
+  width: 100%; 
+  max-width: 500px; 
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f7f7f7;
 }
 
-/* add media query for smaller screens */
 @media screen and (max-width: 600px) {
   .register-card-form {
-    max-width: 90%; /* decrease max-width for smaller screens */
+    max-width: 90%; 
   }
 }
+
 nav {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   padding: 20px;
   background-color: #fff;
@@ -79,8 +63,10 @@ nav {
 }
 .form-group {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 
+}
+.small-input {
+  max-width: 80px;
 }
