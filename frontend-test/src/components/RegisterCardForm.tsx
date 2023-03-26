@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 
 //Define interface for all form values 
 interface FormValues {
-  creditCard:number;
-  cvc:number;
+  creditCard:string;
+  cvc:string;
   expiryDate:string;
 }
 
@@ -13,8 +13,8 @@ const RegisterCardForm: React.FC= () => {
   //using useState hook to store FormValues
 
   const [formValues, setFormValues] = useState<FormValues>({
-    creditCard:0,
-    cvc:0,
+    creditCard:'',
+    cvc:'',
     expiryDate:''
   })
 
@@ -38,12 +38,12 @@ const RegisterCardForm: React.FC= () => {
     const {creditCard, cvc, expiryDate} = formValues
     let isValid = true;
     // credit card validation
-    if (isNaN (creditCard)) {
+    if (isNaN (Number(creditCard))) {
       isValid = false;
       console.log('Credit card number is not a number')
     }
     // cvv validation
-    if (isNaN (cvc)) {
+    if (isNaN (Number(cvc))) {
       isValid = false;
       console.log('CVC is not a number')
     }
@@ -61,19 +61,19 @@ const RegisterCardForm: React.FC= () => {
     
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="creditCard">Credit Card</label>
-          <input type="number" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
+        
+          <input type="text" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
           value={formValues.creditCard } 
-          onChange={handleChange} required/>
+          onChange={handleChange} required />
+          
         </div>
         <div>
-        <label htmlFor="cvc">CVC</label>
-        <input type="number" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
+        
+        <input type="text" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
         onChange={handleChange} required/>
-        </div>
-        <div>
-        <label htmlFor="expiryDate">Expiry Date</label>
-        <input type="date" id="expiryDate" name="expiryDate" placeholder="Expiry Date" value={formValues.expiryDate} 
+        
+       
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="Expiry Date" value={formValues.expiryDate} 
         onChange={handleChange} required/>
         </div>
         <button type="submit">Submit</button>
