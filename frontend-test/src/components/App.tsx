@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../logo.svg';
+
 import '../Styles.css';
 
 import RegisterCardForm from './RegisterCardForm';

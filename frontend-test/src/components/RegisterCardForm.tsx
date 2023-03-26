@@ -59,15 +59,15 @@ const RegisterCardForm: React.FC= () => {
 
   return (
     
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form  className="register-card-form" onSubmit={handleSubmit}>
+        <div className='form-group'>
         
           <input type="text" id="creditCard" name="creditCard" placeholder="Credit Card Number" 
           value={formValues.creditCard } 
           onChange={handleChange} required />
           
         </div>
-        <div>
+        <div className='form-group'>
         
         <input type="text" id="cvc" name="cvc" placeholder="CVC" value={formValues.cvc} 
         onChange={handleChange} required/>
